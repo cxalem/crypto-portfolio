@@ -83,7 +83,7 @@ export const SearchBar = () => {
             {results.items.length > 0 ? (
               <SearchResults results={results} />
             ) : (
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-3">
                 <h2 className="p-4 font-semibold text-gray-500">
                   Top crypto currencies 🔥
                 </h2>
