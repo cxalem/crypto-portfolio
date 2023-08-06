@@ -13,7 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="text-gray-600 bg-gradient-to-b from-slate-100 to-white">
+      <body className="text-gray-600 bg-gradient-to-b from-slate-100 to-white min-h-screen">
         <nav className="w-full bg-white py-4 px-12 border-b flex justify-between items-center">
           Crypto Portfolio
           <button className="border rounded-lg py-2 px-5 hover:bg-gray-100">
