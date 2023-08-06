@@ -59,7 +59,7 @@ export const SearchBar = () => {
           value={query}
           onChange={handleSearch}
           id="search"
-          placeholder="Search for apps, tools, libraries..."
+          placeholder="Find your crypto currency..."
           onFocus={() => setResults({ ...results, show: true })}
           onBlur={() =>
             setTimeout(() => setResults({ ...results, show: false }), 150)
