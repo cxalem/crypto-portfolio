@@ -19,17 +19,24 @@ export const SearchBar = () => {
 
   useEffect(() => {
     const fetchCoins = async () => {
-      const res = await fetch(endpoints.coins.getCoins(100));
-      const coins = await res.json();
-      setCoins(coins);
+      try {
+        const res = await fetch(endpoints.coins.getCoins(100));
+        if (!res.ok) {
+          throw new Error(res.statusText);
+        }
+        const coins = await res.json();
+        setCoins(coins);
+      } catch (err) {
+        console.error(err);
+      }
     };
     fetchCoins();
   }, []);
 
   const search = () => {
-    const items = query
+    const items = query.trim()
       ? coins.filter((item) =>
-          item.name.toLowerCase().includes(query.toLowerCase())
+          item.name.toLowerCase().includes(query.toLowerCase().trim())
         )
       : [];
 
@@ -59,13 +66,14 @@ export const SearchBar = () => {
           }
         />
 
-        <button className="grid w-12 h-full text-gray-300 place-items-center">
+        <button className="grid w-12 h-full text-gray-300 place-items-center" aria-label="Search">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="w-6 h-6"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
+            aria-hidden="true"
           >
             <path
               strokeLinecap="round"
