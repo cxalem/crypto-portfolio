@@ -6,6 +6,7 @@ export default async function Home() {
     <main className="flex min-h-screen p-5 md:p-0 flex-col items-center mt-10 gap-5 md:gap-10">
       <SearchBar />
       <CoinsList />
+      <h1 className="text-2xl font-bold">Hola Adriana</h1>
     </main>
   );
 }
