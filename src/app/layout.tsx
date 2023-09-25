@@ -21,6 +21,7 @@ export default function RootLayout({
           <button className="border rounded-lg py-2 px-5 hover:bg-gray-100">
             Connect Wallet
           </button>
+          Ejemplo en el navbar
         </nav>
         {children}
       </body>
